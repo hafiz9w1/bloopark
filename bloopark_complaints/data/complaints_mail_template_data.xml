@@ -1,0 +1,127 @@
+<odoo>
+    <data>    
+        <record id="complaints_email_template" model="mail.template">     
+            <field name="name">Complaints - Received</field>
+            <field name="model_id" ref="bloopark_complaints.model_complaints_main"/>        
+            <field name="email_from">"{{ object.assigned_user_id.user_id.email }}" </field>      
+            <field name="email_to">"{{ object.email }}"</field>
+            <field name="subject">Complaint</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">               
+                    <div style="margin: 0px; padding: 0px;">              
+                        <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                                        
+                            Dear <t t-out="object.name"/>,                
+                            <br/>
+                            <br/>
+                            Your complaint was received with the following details!
+                            <br/>
+                            <strong>Complaint Number: </strong><t t-out="object.complaint_number"/><br/>
+                            <strong>Flat Address: </strong><t t-out="object.flat_address"/><br/>
+                            <strong>Email: </strong><t t-out="object.email"/><br/>
+                            <strong>Complaint Details: </strong> <t t-out="object.description"/>
+                            <br/>
+                            <br/>
+                            Regards,
+                            <br/>
+                            <t t-out="object.assigned_user_id.user_id.name"/>        
+                        </p>
+                    </div>
+                </div>
+            </field>    
+        </record>
+
+        <record id="complaint_response_email_template" model="mail.template">     
+            <field name="name">Complaints - Response</field>
+            <field name="model_id" ref="bloopark_complaints.model_complaints_main"/>        
+            <field name="email_from">"{{ object.assigned_user_id.user_id.email }}" </field>      
+            <field name="email_to">"{{ object.email }}"</field>
+            <field name="subject">Complaint - Response</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">               
+                    <div style="margin: 0px; padding: 0px;">              
+                        <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                                        
+                            Dear <t t-out="object.name"/>,                
+                            <br/>
+                            <br/>
+                            Your complaint with the following details: Add your comments here!!!
+                            <br/>
+                            <strong>Complaint Number: </strong><t t-out="object.complaint_number"/><br/>
+                            <strong>Flat Address: </strong><t t-out="object.flat_address"/><br/>
+                            <strong>Email: </strong><t t-out="object.email"/><br/>
+                            <strong>Complaint Details: </strong> <t t-out="object.description"/>
+                            <br/>
+                            <br/>
+                            Regards,
+                            <br/>
+                            <t t-out="object.assigned_user_id.user_id.name"/>        
+                        </p>
+                    </div>
+                </div>
+            </field>    
+        </record>
+
+        <record id="complaint_solved_email_template" model="mail.template">     
+            <field name="name">Complaints - Solved</field>
+            <field name="model_id" ref="bloopark_complaints.model_complaints_main"/>        
+            <field name="email_from">"{{ object.assigned_user_id.user_id.email }}" </field>      
+            <field name="email_to">"{{ object.email }}"</field>
+            <field name="subject">Complaint - Solved</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">               
+                    <div style="margin: 0px; padding: 0px;">              
+                        <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                                        
+                            Dear <t t-out="object.name"/>,                
+                            <br/>
+                            <br/>
+                            Your complaint with the following details have been resolved!
+                            <br/>
+                            <strong>Complaint Number: </strong><t t-out="object.complaint_number"/><br/>
+                            <strong>Flat Address: </strong><t t-out="object.flat_address"/><br/>
+                            <strong>Email: </strong><t t-out="object.email"/><br/>
+                            <strong>Complaint Details: </strong> <t t-out="object.description"/>
+                            <br/>
+                            <br/>
+                            Regards,
+                            <br/>
+                            <t t-out="object.assigned_user_id.user_id.name"/>        
+                        </p>
+                    </div>
+                </div>
+            </field>    
+        </record>
+
+        <record id="complaint_closed_email_template" model="mail.template">     
+            <field name="name">Complaints - Closed</field>
+            <field name="model_id" ref="bloopark_complaints.model_complaints_main"/>        
+            <field name="email_from">"{{ object.assigned_user_id.user_id.email }}" </field>      
+            <field name="email_to">"{{ object.email }}"</field>
+            <field name="subject">Complaint - Closed</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">               
+                    <div style="margin: 0px; padding: 0px;">              
+                        <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                                        
+                            Dear <t t-out="object.name"/>,                
+                            <br/>
+                            <br/>
+                            Your complaint with the following details have been closed!
+                            <br/>
+                            <strong>Complaint Number: </strong><t t-out="object.complaint_number"/><br/>
+                            <strong>Flat Address: </strong><t t-out="object.flat_address"/><br/>
+                            <strong>Email: </strong><t t-out="object.email"/><br/>
+                            <strong>Complaint Details: </strong> <t t-out="object.description"/>
+                            <br/>
+                            <br/>
+                            Regards,
+                            <br/>
+                            <t t-out="object.assigned_user_id.user_id.name"/>        
+                        </p>
+                    </div>
+                </div>
+            </field>    
+        </record>
+    </data>
+</odoo>

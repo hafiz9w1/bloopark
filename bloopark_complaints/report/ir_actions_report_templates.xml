@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_complaintsmain_document">
+        <t t-call="web.external_layout">
+            <div class="oe_structure"/>
+
+            <h2 class="mt-4">
+                <strong>Work Order</strong>
+            </h2>
+
+            <div class="row mt-4 mb-4" id="informations">
+                <div t-if="doc.complaint_number" class="col-auto col-3 mw-100 mb-2" name="informations_complaint_number">
+                    <strong>Complaint Number:</strong>
+                    <p class="m-0" t-field="doc.complaint_number"/>
+                </div>
+                <div t-if="doc.name" class="col-auto col-3 mw-100 mb-2" name="informations_name">
+                    <strong>Customer:</strong>
+                    <p class="m-0" t-field="doc.name"/>
+                </div>
+                <div t-if="doc.email" class="col-auto col-3 mw-100 mb-2" name="informations_email">
+                    <strong>Customer Email:</strong>
+                    <p class="m-0" t-field="doc.email"/>
+                </div>
+                <div t-if="doc.complaints_date" class="col-auto col-3 mw-100 mb-2" name="informations_complaints_date">
+                    <strong>Complaint Date:</strong>
+                    <p class="m-0" t-field="doc.complaints_date"/>
+                </div>
+                <div t-if="doc.flat_address" class="col-auto col-3 mw-100 mb-2" name="informations_flat_address">
+                    <strong>Customer Address:</strong>
+                    <p class="m-0" t-field="doc.flat_address"/>
+                </div>
+                <div t-if="doc.description" class="col-auto col-3 mw-100 mb-2" name="informations_description">
+                    <strong>Complaint Description:</strong>
+                    <p class="m-0" t-field="doc.description"/>
+                </div>
+                <div t-if="doc.action_plan" class="col-auto col-3 mw-100 mb-2" name="informations_action_plan">
+                    <strong>Action Plan:</strong>
+                    <p class="m-0" t-field="doc.action_plan"/>
+                </div>
+                <div t-if="doc.assigned_user_id" class="col-auto col-3 mw-100 mb-2">
+                    <strong>Assigned User:</strong>
+                    <p class="m-0" t-field="doc.assigned_user_id"/>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_complaintsmain">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="bloopark_complaints.report_complaintsmain_document" t-lang="doc.user_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+bloopark_complaints.access_complaints_main_user,access_complaints_main,bloopark_complaints.model_complaints_main,bloopark_complaints.group_complaint_user,1,1,1,1
+bloopark_complaints.access_complaints_type_user,access_complaints_type,bloopark_complaints.model_complaints_type,bloopark_complaints.group_complaint_user,1,1,1,1
+bloopark_complaints.access_complaints_stage_user,access_complaints_stage,bloopark_complaints.model_complaints_stage,bloopark_complaints.group_complaint_user,1,1,1,1
+

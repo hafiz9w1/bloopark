@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_complaintsmain" model="ir.actions.report">
+        <field name="name">Complaint - Work Order</field>
+        <field name="model">complaints.main</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">bloopark_complaints.report_complaintsmain</field>
+        <field name="report_file">bloopark_complaints.report_complaintsmain</field>
+        <field name="print_report_name">object.complaint_number</field>
+        <field name="binding_model_id" ref="model_complaints_main"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

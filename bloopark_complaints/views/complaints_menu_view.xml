@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem 
+        id="complaints_main_menu_root"
+        name="Complaints"
+        web_icon="bloopark_complaints,static/description/icon.png"
+        action="bloopark_complaints.action_complaints_main_open"
+        sequence="10"
+    />
+
+    <menuitem 
+        id="complaints_menu_root"
+        name="Complaints"
+        action="bloopark_complaints.action_complaints_main_open"
+        parent="complaints_main_menu_root"
+        sequence="20"
+    /> 
+
+    <menuitem
+        id="complaints_menu_config"
+        name="Configuration"
+        parent="complaints_main_menu_root"
+        sequence="30"
+    />
+
+    <menuitem 
+        id="complaints_type_menu_root"
+        name="Complaints Type"
+        action="bloopark_complaints.action_complaints_type_open"
+        parent="complaints_menu_config"
+        sequence="1"
+    /> 
+
+    <menuitem
+        id="complaints_stage_menu_root"
+        name="Complaints Stage"
+        parent="complaints_menu_config"
+        action="bloopark_complaints.complaints_stage_action"
+        sequence="2"
+    />
+
+</odoo>
