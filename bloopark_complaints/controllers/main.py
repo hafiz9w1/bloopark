@@ -29,13 +29,16 @@ class CreateProposal(http.Controller):
         Create complaint from website and send email
         """
         crm_team_member_ids = request.env['crm.team.member'].sudo().search([])
+        complaints_stage_ids = request.env[
+            'complaints.stage'].sudo().search([]).filtered(
+                lambda l: l.name == 'New')
         complaint = request.env['complaints.main'].sudo().create({
             'name': kw.get('name'),
             'email': kw.get('email'),
             'flat_address': kw.get('flat_address'),
             'complaint_type_id': kw.get('complaint_type_id'),
             'description': kw.get('description'),
-            'complaints_stage_id': 1,
+            'complaints_stage_id': complaints_stage_ids.id,
             'assigned_user_id': crm_team_member_ids[0].user_id.id,
         })
 
